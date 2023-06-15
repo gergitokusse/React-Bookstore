@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import BookList from './components/bookList';
 import Navigation from './components/Navigation';
 import './App.css';
 
@@ -8,10 +9,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navigation />
-        <Routes>
-          <Route path="/" element={<>Home</>} />
-          <Route path="/categories" element={<>Book Catagories</>} />
-        </Routes>
+        <BookList />
       </BrowserRouter>
     </div>
   );
