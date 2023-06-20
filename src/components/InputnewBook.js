@@ -2,7 +2,7 @@ function InputNewBook() {
   return (
     <div>
       <h2>Add new Book</h2>
-      <form>
+      <form name="addnewbook" id="myform">
         <input type="text" />
         <select>
           <option value="" key="">Option-1</option>
