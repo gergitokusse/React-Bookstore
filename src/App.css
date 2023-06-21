@@ -22,3 +22,71 @@ nav ul {
 nav ul li {
   list-style: none;
 }
+
+.container {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container .single-book-item {
+  border: 1px solid #efefef;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-right: 100px;
+  border-right: 1px solid #efefef;
+}
+
+.book-info .book-title {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.single-book-item .book-info span {
+  color: rgb(24, 124, 238);
+  border-right: 1px solid #efefef;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.single-book-item .book-info .span {
+  padding: 0 20px;
+}
+
+.single-book-item .book-info .edit {
+  border-right: none;
+}
+
+.form {
+  padding: 10px;
+  border: 1px solid #efefef;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.form input {
+  padding: 10px;
+  width: 50%;
+}
+
+.form button,
+.btn {
+  background-color: rgb(28, 125, 235);
+  color: #efefef;
+  outline: auto;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
