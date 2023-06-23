@@ -2,12 +2,15 @@ import { Link } from 'react-router-dom';
 
 const Navigation = () => (
   <nav>
-    <p>BOOK Store CMS</p>
-    <ul>
-      <li><Link to="/">Book</Link></li>
-      <li><Link to="/categories">Categories</Link></li>
-      {/* <li><Link to="/counter">Counter</Link></li> */}
-    </ul>
+    <div className="navdiv">
+      <p className="cr-belue fs-6 fw-bolder">BOOKStore CMS</p>
+      <ul>
+        <li><Link className="Link" to="/">BOOKS</Link></li>
+        <li><Link className="Link" to="/categories">CATAGORY</Link></li>
+        {/* <li><Link to="/counter">Counter</Link></li> */}
+      </ul>
+    </div>
+    <p className="cr-belue"><i className="bi-person-circle" /></p>
   </nav>
 );
 

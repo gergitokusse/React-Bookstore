@@ -22,42 +22,45 @@ function InputNewBook() {
   };
   return (
     <div>
-      <h2>Add new Book</h2>
       <form className="form" onSubmit={addNewBook}>
-        <input
-          required
-          name="title"
-          className="input input-book"
-          type="text"
-          placeholder="Book Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          required
-          name="author"
-          className="input input-book"
-          type="text"
-          placeholder="Book author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-        <select
-          name="category"
-          value={category}
-          className="input category-input"
-          onChange={(e) => setCategory(e.target.value)}
-          required
-        >
-          <option>Action</option>
-          <option>Educational</option>
-          <option>Fiction</option>
-          <option>Science Fiction</option>
-          <option>Economy</option>
-        </select>
-        <button className="book-submit-btn" type="submit">
-          Add Book
-        </button>
+        <h2>Add new Book</h2>
+        <div className="form-input">
+          <input
+            required
+            name="title"
+            className="input input-book"
+            type="text"
+            placeholder="Book Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            required
+            name="author"
+            className="input input-book"
+            type="text"
+            placeholder="Book author"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
+          <select
+            name="category"
+            value={category}
+            className="input category-input"
+            onChange={(e) => setCategory(e.target.value)}
+            required
+          >
+            <option value="">Catagory</option>
+            <option>Action</option>
+            <option>Educational</option>
+            <option>Fiction</option>
+            <option>Science Fiction</option>
+            <option>Economy</option>
+          </select>
+          <button className="book-submit-btn" type="submit">
+            Add Book
+          </button>
+        </div>
       </form>
     </div>
   );

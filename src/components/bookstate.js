@@ -19,13 +19,13 @@ function BookStat() {
           key={mybook.id}
         >
           <div className="book-info">
-            <p>{mybook.category}</p>
+            <p className="book-catagory">{mybook.category}</p>
             <p className="book-title">{mybook.title}</p>
-            <p>{mybook.author}</p>
+            <p className="book-author">{mybook.author}</p>
             <span>Comment</span>
             <span className="span">
               <button
-                className="btn"
+                className="span-btn"
                 type="submit"
                 onClick={() => {
                   dispatch(deleteBooks(mybook.id));
@@ -37,14 +37,19 @@ function BookStat() {
             <span className="span edit">Edit</span>
           </div>
           <div className="progress">
-            <h3>
-              {i + 45}
-              %
-            </h3>
-            <p>Completed</p>
+            <div className="progress-bar">
+              <progress value="75" min="0" max="100" style={{ visibility: 'hidden', height: '0', width: '0' }}>75%</progress>
+            </div>
+            <div className="progress-complete">
+              <h3>
+                {i + 45}
+                %
+              </h3>
+              <p className="book-title book-catagory">Completed</p>
+            </div>
           </div>
           <div className="current-chapter">
-            <p>Current Chapter</p>
+            <p className="book-catagory">CURRENT CHAPTER</p>
             <p>
               Chapter-1
               {i}
