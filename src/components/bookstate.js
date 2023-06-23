@@ -1,27 +1,35 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook, removeAllBook } from '../redux/book/bookSlice';
+import { getData, deleteBooks } from '../redux/book/bookSlice';
 import InputNewBook from './InputnewBook';
 
 function BookStat() {
-  const book = useSelector((mybook) => mybook.books.books);
   const dispatch = useDispatch();
+  const books = useSelector((mybook) => mybook.books);
+
+  useEffect(() => {
+    dispatch(getData());
+  }, []);
+
   return (
     <div className="container">
-      {book.map((mybook) => (
+      {Object.values(books).map((mybook, i) => (
         <div
           className="single-book-item"
-          key={mybook.item_id}
+          key={mybook.id}
         >
           <div className="book-info">
-            <p>{mybook.category}</p>
+            <p className="book-catagory">{mybook.category}</p>
             <p className="book-title">{mybook.title}</p>
-            <p>{mybook.author}</p>
+            <p className="book-author">{mybook.author}</p>
             <span>Comment</span>
             <span className="span">
               <button
-                className="btn"
+                className="span-btn"
                 type="submit"
-                onClick={() => dispatch(removeBook(mybook.item_id))}
+                onClick={() => {
+                  dispatch(deleteBooks(mybook.id));
+                }}
               >
                 Remove
               </button>
@@ -29,21 +37,29 @@ function BookStat() {
             <span className="span edit">Edit</span>
           </div>
           <div className="progress">
-            <h3>64%</h3>
-            <p>Completed</p>
+            <div className="progress-bar">
+              <progress value="75" min="0" max="100" style={{ visibility: 'hidden', height: '0', width: '0' }}>75%</progress>
+            </div>
+            <div className="progress-complete">
+              <h3>
+                {i + 45}
+                %
+              </h3>
+              <p className="book-title book-catagory">Completed</p>
+            </div>
           </div>
           <div className="current-chapter">
-            <p>Current Chapter</p>
-            <p>Chapter-17</p>
+            <p className="book-catagory">CURRENT CHAPTER</p>
+            <p>
+              Chapter-1
+              {i}
+            </p>
             <button className="btn" type="button">
               Update Progress
             </button>
           </div>
         </div>
       ))}
-      <button type="submit" className="btn" onClick={() => dispatch(removeAllBook())}>
-        Remove All Books
-      </button>
       <InputNewBook />
     </div>
   );
